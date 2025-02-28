@@ -5,6 +5,17 @@
     src: url("fonts/GT-Walsheim-Pro-Regular.otf") format("opentype");
 }
 
+*,
+*::before,
+*::after {
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none; 
+}
+
 html,
 body {
     margin: 0;
@@ -32,12 +43,6 @@ body::-webkit-scrollbar {
     z-index: -1;
     backdrop-filter: blur(20px);
 }
-
-/* [data-aos] {
-    opacity: 0 !important;
-    transition: opacity 0.5s ease-in-out !important;
-} */
-
 
 .balls {
     z-index: -2;
