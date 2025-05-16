@@ -1,0 +1,8 @@
+credentials.json
+sponsors.json
+bin/
+lib64/
+lib/
+include/
+sponsors.py
+e.py

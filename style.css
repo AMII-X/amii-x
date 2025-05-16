@@ -1,0 +1,90 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(135deg, #0a0f0d 0%, #1a2a28 100%);
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #82c4ad, #D3E8C4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.snap-center {
+    overflow: visible !important;
+}
+
+.neon-badge {
+    filter: drop-shadow(0 0 2px rgba(130, 196, 173, 0.5));
+}
+
+.neon-border {
+    border: 1px solid rgba(130, 196, 173, 0.3);
+    box-shadow: 0 0 15px rgba(130, 196, 173, 0.2);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 25px rgba(130, 196, 173, 0.4);
+}
+
+img {
+    width: 100%;
+}
+
+.profile-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1) rotate(-15deg);
+    box-shadow: 0 0 15px rgba(130, 196, 173, 0.5);
+}
+
+.pfp-container::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #82c4ad, transparent);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pfp-container:hover::before {
+    opacity: 0.5;
+}
+
+/* Add carousel fixes */
+#welcomepics {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#welcomepics .carousel-inner {
+    height: 100%;
+}
+
+#welcomepics .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+}
+
+#welcomepics .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    background: none;
+    border: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}

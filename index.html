@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMII - Assembly of Mythic Innovation</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            900: '#0a0f1a',
+                            800: '#101a2d',
+                            700: '#1a2d4a',
+                            500: '#2e4b6e',
+                            300: '#4a6c8f'
+                        },
+                        golden: {
+                            400: '#d4af37'
+                        }
+                    },
+                    fontFamily: {
+                        greek: ['Cinzel', 'serif'],
+                        body: ['Cormorant', 'serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s ease-in-out infinite',
+                        'gradient-gold': 'gradientGold 8s ease infinite'
+                    },
+                    keyframes: {
+                        gradientGold: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        }
+                    },
+                    backgroundImage: {
+                        'greek-pattern': "url('data:image/svg+xml;base64,...')"
+                    },
+                    boxShadow: {
+                        golden: '0 0 20px rgba(212, 175, 55, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <style>
+        html,
+        body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        @import url(https://fonts.googleapis.com/css2?family=Nova+Square&display=swap);
+
+        body {
+            @apply bg-primary-900 text-gray-100;
+        }
+
+        .nav-border {
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .greek-border {
+            border: 2px solid #d4af37;
+            border-image: linear-gradient(45deg, #d4af37, #0a0f1a) 1;
+        }
+
+        .column-pattern::before {
+            content: '';
+            @apply absolute inset-0 opacity-10;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCwwSDhWOEgwVjBaIiBmaWxsPSIjZDRhZjM3Ii8+Cjwvc3ZnPgo=');
+        }
+
+        .carousel-caption {
+            font-size: 3rem;
+            font-family: 'Nova Square', display;
+            margin-bottom: 5vh;
+        }
+
+        .animate-gradient-gold {
+            background-image: linear-gradient(270deg, #d4af37, #b8860b, #d4af37);
+            background-size: 200% 200%;
+            animation: gradientGold 6s ease infinite;
+        }
+
+        .column-pattern::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url('data:image/svg+xml;base64,...');
+        }
+    </style>
+</head>
+
+<body class="bg-primary-900 text-gray-100 font-body">
+    <nav class="fixed top-0 left-0 w-screen max-w-full bg-primary-800/90 backdrop-blur-md z-50 border-b border-golden-400/20">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-greek text-golden-400">⚔ AMII</div>
+            <ul class="flex gap-6 text-golden-400 text-sm font-greek">
+                <li><a href="#home" class="hover:text-yellow-300">Olympus</a></li>
+                <li><a href="#bureau" class="hover:text-yellow-300">Pantheon</a></li>
+                <li><a href="#cellules" class="hover:text-yellow-300">Guilds</a></li>
+                <li><a href="#events" class="hover:text-yellow-300">Oracle</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="app" class="pt-20" style="position: relative;">
+        <section id="homee" style="position: absolute; "
+            class="relative min-h-screen flex items-center justify-center bg-primary-900 text-center px-4">
+            <!-- Semi-opaque overlay -->
+            <div class="absolute inset-0 bg-primary-900/50 z-0"></div>
+
+            <!-- Halo wrapper -->
+            <div class="absolute inset-0 flex items-center justify-center z-10" style="transform: translateX(100%);">
+                <div class="w-96 h-96 rounded-full blur-3xl bg-golden-400 opacity-20 animate-pulse-slow"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-20 space-y-6 max-w-xl" data-aos="fade-up">
+                <h1 class="text-5xl sm:text-6xl font-greek text-golden-400 tracking-wide uppercase leading-tight">
+                    <span class="block bg-clip-text text-transparent bg-gradient-to-r from-golden-400 to-yellow-300">
+                        ⚔ AMII-X ⚔
+                    </span>
+                    <span class="text-xl text-gray-300 block mt-2 tracking-widest">
+                        Assembly of Mythic Innovation
+                    </span>
+                </h1>
+                <p class="text-lg text-gray-300 leading-relaxed font-body">
+                    Where the wisdom of Athena meets the forge of Hephaestus, crafting tomorrow's legends today.
+                </p>
+                <a href="#bureau"
+                    class="inline-block bg-golden-400/10 hover:bg-golden-400/20 border border-golden-400 px-6 py-3 rounded-lg font-greek text-golden-400 hover:shadow-golden transition-all tracking-wider uppercase">
+                    Enter the Agora
+                </a>
+            </div>
+        </section>
+
+        <section id="home" class="relative min-h-screen flex items-center justify-center bg-primary-900 text-center px-4">
+            <!-- Remove the overlay and halo wrapper temporarily -->
+            <div class="relative z-20 space-y-6 max-w-xl">
+                <h1 class="text-5xl sm:text-6xl font-greek text-golden-400 tracking-wide uppercase leading-tight">
+                    <span class="block animate-gradient-gold bg-clip-text text-transparent">
+                        ⚔ AMII-X ⚔
+                    </span>
+                    <span class="text-xl text-gray-300 block mt-2 tracking-widest">
+                        Assembly of Mythic Innovation
+                    </span>
+                </h1>
+                <p class="text-lg text-gray-300 leading-relaxed font-body">
+                    Where the wisdom of Athena meets the forge of Hephaestus, crafting tomorrow's legends today.
+                </p>
+                <a href="#bureau" class="inline-block bg-golden-400/10 hover:bg-golden-400/20 border border-golden-400 px-6 py-3 rounded-lg font-greek text-golden-400 hover:shadow-golden transition-all tracking-wider uppercase">
+                    Enter the Agora
+                </a>
+            </div>
+        </section>
+        
+
+
+
+        <!-- BUREAU -->
+        <section id="bureau" class="py-20 bg-primary-800/80 relative column-pattern">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-greek text-golden-400 text-center mb-10 uppercase tracking-wide">Divine Council
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div v-for="member in bureau" :key="member.name"
+                        class="bg-primary-700/50 border border-golden-400/20 p-4 rounded-xl text-center hover:shadow-golden transition-all">
+                        <img :src="member.photo"
+                            class="w-24 h-24 mx-auto rounded-full object-cover border-2 border-golden-400/40 mb-4" />
+                        <h3 class="text-xl font-greek text-golden-400">{{ member.name }}</h3>
+                        <p class="text-gray-300 text-sm italic">{{ member.role }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CELLULES -->
+        <section id="cellules" class="py-20 bg-primary-900 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-greek text-golden-400 text-center mb-10 uppercase tracking-wide">Sacred Guilds
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div v-for="cell in cellules" :key="cell.name"
+                        class="bg-primary-800 border border-golden-400/20 rounded-xl overflow-hidden shadow hover:shadow-golden transition">
+                        <img :src="cell.image" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-2xl font-greek text-golden-400 mb-2">{{ cell.name }}</h3>
+                            <p class="text-gray-300">{{ cell.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTS -->
+        <section id="events" class="py-20 bg-primary-800/90">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-greek text-golden-400 text-center mb-10 uppercase tracking-wide">Heroic
+                    Chronicles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div v-for="event in pastEvents" :key="event.title"
+                        class="bg-primary-900 border border-golden-400/20 p-4 rounded-xl">
+                        <img :src="event.image" class="w-full h-48 object-cover rounded-md mb-4" />
+                        <h4 class="text-xl font-greek text-golden-400">{{ event.title }}</h4>
+                        <p class="text-gray-400 text-sm">{{ event.date }}</p>
+                    </div>
+                </div>
+                <!-- Symposium -->
+                <div class="bg-primary-900 border border-golden-400/30 p-6 rounded-xl text-center">
+                    <h3 class="text-2xl font-greek text-golden-400 mb-4">The Grand Symposium</h3>
+                    <p class="text-gray-300 mb-4">Join us under Olympus’ gaze for three days of divine innovation.</p>
+                    <p class="text-golden-400 font-greek">16–18 May 2025 • Mount Olympus</p>
+                    <div class="mt-4 rounded-lg overflow-hidden" style="height: 50vw;">
+                        <img :src="mainEvent.image" class="w-full object-cover h-56"
+                            style="width: 100%; height: 100%; object-fit: cover;" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-800 border-t border-golden-400/10 text-sm text-gray-400">
+        <div class="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+            <div>
+                <h4 class="font-greek text-golden-400 mb-2">AMII Pantheon</h4>
+                <p>Where mortals craft divine innovation</p>
+            </div>
+            <div>
+                <h4 class="font-greek text-golden-400 mb-2">Developed by</h4>
+                <p class="text-golden-400">Aferiad Kamal</p>
+            </div>
+            <div>
+                <h4 class="font-greek text-golden-400 mb-2">Supervised by</h4>
+                <p class="text-golden-400">El Hend Amine</p>
+            </div>
+        </div>
+        <div class="text-center border-t border-golden-400/10 py-4 text-gray-500">© 2025 AMII – All rights reserved by
+            divine decree</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        AOS.init({ duration: 1000 });
+
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    bureau: [
+                        { name: 'El Hamri Hiba', role: 'Secrétaire', photo: './hiba1.png' },
+                        { name: 'El Khalfi Anouar', role: 'Vice-Présidente', photo: './vice.png' },
+                        { name: 'Essaraf Mehdi', role: 'Président', photo: './president.png' },
+                        { name: 'Agouss Ibrahim', role: 'Vice-Présidente', photo: './vice2.png' },
+                        { name: 'El khtiri Yasser', role: 'Trésorière', photo: './tresorier.png' },
+                    ],
+                    cellules: [
+                        { name: 'Cellule Media', image: './media.png', description: 'Professional shooting? Elegant posters? say no more.' },
+                        { name: 'Cellule Organisation', image: './orga.png', description: "It's sweet to view the sea when standing on the shore." },
+                        { name: 'Cellule Plannification', image: './planif.png', description: 'The good things take time to happen.' },
+                        { name: 'Cellule Contact et Sponsoring', image: 'sponso.png', description: 'A good captain proves themselves in a storm.' },
+                    ],
+                    pastEvents: [
+                        { title: 'Night Party - Stormy', date: '20 Dec 2024', image: './stormy.png' },
+                        { title: 'ArtiStreetLeague', date: '27 April 2025', image: './asl.png' },
+                        { title: 'The Artemis Games', date: '20 April 2025', image: './img1.png' }
+                    ],
+                    mainEvent: { image: './amii.jpg' }
+                };
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
